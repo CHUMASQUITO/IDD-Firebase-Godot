@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/TestGame/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/TestGame/Enemy.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/TestGame/TestGame.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/TestGame/HUD.tscn" type="PackedScene" id=4]
+
+[node name="MainScene" type="Node"]
+script = ExtResource( 3 )
+enemyScene = ExtResource( 2 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.2, 0.545098, 0.74902, 1 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 160, 90 )
+
+[node name="StartTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="EnemySpawnTimer" type="Timer" parent="."]
+wait_time = 0.3
+
+[node name="ScoreTimer" type="Timer" parent="."]
+
+[node name="HUD" parent="." instance=ExtResource( 4 )]
+
+[connection signal="playerHit" from="Player" to="." method="_gameOver"]
+[connection signal="timeout" from="EnemySpawnTimer" to="." method="_on_EnemySpawn_timeout"]
+[connection signal="timeout" from="ScoreTimer" to="." method="_on_ScoreTimer_timeout"]
+[connection signal="startGame" from="HUD" to="." method="_newGame"]
