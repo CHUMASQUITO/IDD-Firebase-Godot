@@ -26,6 +26,6 @@ func _process(delta):
 		
 	update();
 
-#func _draw():
+func _draw():
 #	if Engine.editor_hint:
-#		draw_circle(Vector2.ZERO, draggingZoneRadius, Color.white);
+		draw_circle(Vector2.ZERO, draggingZoneRadius, Color.white);

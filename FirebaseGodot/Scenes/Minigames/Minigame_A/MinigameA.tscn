@@ -9,7 +9,7 @@ position = Vector2( 181, 212 )
 script = ExtResource( 2 )
 
 [node name="DeV" type="Node2D" parent="."]
-position = Vector2( 214, 156 )
+position = Vector2( 335, 307 )
 
 [node name="Sprite" type="Sprite" parent="DeV"]
 texture = ExtResource( 3 )

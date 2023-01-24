@@ -14,12 +14,14 @@ func _ready():
 	
 	draggingZonesArray = get_tree().get_nodes_in_group("draggingZones");
 	
+	#Zonas para arrastrar elementos
 	for i in draggingZonesArray.size():
 		var newDraggingZone = draggingZonesArray[i];
 		
-		#Adjudicarle el controlador del minijuego a cada elemento
+		#Adjudicarle el controlador del minijuego a cada zona
 		newDraggingZone.minigameController = self;
 	
+	#Elementos para arrastrar
 	var elementsAmount = randi() % 4 + 2; #Número entero aleatorio entre 2 y 5
 	for i in elementsAmount:
 #		#Instanciar elemento
