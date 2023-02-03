@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/Minigames/Minigame_A/MGA_Dev.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Minigames/Minigame_A/DraggingZone.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Sprites/Minigames/Minigame_A/MGA_Dev.png" type="Texture" id=3]
+
+[sub_resource type="Curve" id=1]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.990909 ), -1.34546, 0.0, 0, 0 ]
+
+[node name="DeV" type="Node2D"]
+position = Vector2( 251, 276 )
+script = ExtResource( 1 )
+devEnterAnimationCurve = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 3 )
+
+[node name="DraggingZones" type="Node2D" parent="."]
+
+[node name="DraggingZone" parent="DraggingZones" groups=["draggingZones"] instance=ExtResource( 2 )]
+position = Vector2( -21, -167 )
+
+[node name="DraggingZone2" parent="DraggingZones" groups=["draggingZones"] instance=ExtResource( 2 )]
+position = Vector2( 7, -106 )
+draggingZoneType = 1
+
+[node name="DraggingZone3" parent="DraggingZones" groups=["draggingZones"] instance=ExtResource( 2 )]
+position = Vector2( 17, -41 )
+draggingZoneType = 2
+
+[node name="DraggingZone4" parent="DraggingZones" groups=["draggingZones"] instance=ExtResource( 2 )]
+position = Vector2( 117, -184 )
+draggingZoneType = 3
+
+[node name="DraggingZone5" parent="DraggingZones" groups=["draggingZones"] instance=ExtResource( 2 )]
+position = Vector2( -121, 14 )
+draggingZoneType = 4

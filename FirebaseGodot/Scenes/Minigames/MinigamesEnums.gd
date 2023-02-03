@@ -1,0 +1,3 @@
+extends Node
+
+enum MGA_ZONE_TYPE {HEAD, FACE, BODY, LHAND, RHAND};

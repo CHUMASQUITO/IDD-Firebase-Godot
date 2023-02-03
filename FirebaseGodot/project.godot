@@ -201,6 +201,7 @@ config/icon="res://icon.png"
 [autoload]
 
 Firebase="*res://addons/godot-firebase/firebase/firebase.tscn"
+MinigamesEnums="*res://Scenes/Minigames/MinigamesEnums.gd"
 
 [display]
 
